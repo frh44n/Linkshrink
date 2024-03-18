@@ -1,6 +1,6 @@
 const https = require('https');
 
-// Define your Telegram bot token
+// Replace this with your actual bot token
 const BOT_TOKEN = '7152220440:AAESlDbvvBKbFrQy9o8HKTrfQNS2N2GzRbI';
 
 // Function to shorten URL using ShrinkEarn API
@@ -75,7 +75,6 @@ exports.handler = async (event) => {
         const chatId = body.message.chat.id;
         const text = body.message.text;
 
-        // Check if the message contains a URL
         if (text.match(/^https?:\/\/\S+/)) {
             try {
                 const shortenedUrl = await shortenURL(text);
